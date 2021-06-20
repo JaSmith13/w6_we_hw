@@ -12,22 +12,24 @@ const handleForm = function(event) {
 
     let filmListItem
     filmListItem = addHTMLElement(filmListItem, 'li', filmList)
+    filmListItem.setAttribute('class', 'list-item')
     
     let title
     title = addHTMLElement(title, 'h3', filmListItem)
     title.textContent = event.target.title.value
+    
 
     let starring
-    starring = addHTMLElement(starring, 'h4', filmListItem)
-    starring.textContent = event.target.starring.value
+    starring = addHTMLElement(starring, 'span', filmListItem)
+    starring.textContent = (`Starring: ${event.target.starring.value}`)
 
     let genre
-    genre = addHTMLElement(genre, 'h4', filmListItem)
-    genre.textContent = event.target.genre.value
+    genre = addHTMLElement(genre, 'span', filmListItem)
+    genre.textContent = (`Genre: ${event.target.genre.value}`)
 
     let year
-    year = addHTMLElement(year, 'h4', filmListItem)
-    year.textContent = event.target.year.value
+    year = addHTMLElement(year, 'span', filmListItem)
+    year.textContent = (`Released ${event.target.year.value}`)
 
     this.reset()
 }
